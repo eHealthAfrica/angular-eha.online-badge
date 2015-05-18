@@ -1,14 +1,25 @@
 sudo: false
 language: node_js
 node_js:
-- '0.12'
-before_script:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- npm install -g grunt-cli
-- npm install
-script:
-- npm test
+- '0.10'
 cache:
   directories:
   - node_modules
+notifications:
+  email: false
+after_script:
+- "./scripts/bower-deploy.sh"
+before_deploy:
+- npm config set spin false --global
+env:
+  global:
+    secure: Aqj6z6qBnqApvngi94Pvrxpow/bCChxyP+DZZFtiNiqqwUCoGMrIUkVWojBGcH+wUqueqSlziZihqKM3r+RcDvxMBdTSsUSUBzYTtz2XHfMgUcCSnmCH2aquiZ4Afvx13E06kLLj/S+ySWSQhnGe4YBt+DAmbQftoZyGEOB0TtTB8jNB+2XgD9nI4hFFW2d4+DWELAgTcusMdPNyn8bmkTqrMv7oPSVKcBaFcqUdUaJtPWIxe6uEEwwgR0qPBCRUjCOS9l4M9hd/uQYUhhOcDPjcAwjFi1uXqSJD32uswofhBNcYdspN0kVGm+uH8oVOSWtr+qDVf8kBVg8zDIYFCXPDE3qzB7bjcWgYzSTV1qhume9uafFqfY25Z8mR0kcz/J4kLmrHR/LhlpNAO0EMatniC8FEpWQfYhnj6s7TNy7JUWInejw7/bZ1ZrE9jFo73JIo7L1e1SEZgD7OhpOIHBZ1e73T4euUMLZJ7vOxNEMsxRe18nSL/xHdIVlXTFoZ1m13dZ0cPQTh3CKGnU5LW7mxOtG6N4TI37RDA0NhO9REp6x8qKw44savSfoLJy7KDACncnaV0InFtCQQ16JAl9l36Alf8gN3j4cJ0y9VoqIncqSy8vit+hXCt51DoW4+Dz047QQZWZVGqLz2FpHp8Q+EGIeeOn2dMqTf2Y25fnM=
+deploy:
+  provider: npm
+  email: oss@ehealthafrica.org
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: eHealthAfrica/angular-eha.online-badge
+  api_key:
+    secure: XKPApi4+Ij+YS9vQs0do+YMMuAeqba2et7NmaUIlwJ6eIKudGFE08vEXWXROU8r8FzjuchxNhcu/FOkJMPG6EnsM6BgqicJFH/X2sfMBPRwtO6lyY1VBs72NxTou5bFAZTNaKjK6OfbA1py6tNhRacEJIk3h5Aam8YLx0dGpZBzZ1s+dGZbMPWEpnxrNvu99Hbdz9MSbgGyYICWb8ECpOmpueUHIU2Bcz7wjAyhJbhELEeRiq2uyvkTmIMAtAksyIDV5x0u70MSeDdJGTDyc/RDGw9doe5TK+0foxGaHaoEbYNNuKIMaSPhDNkv9+W9mOcLkNperx4DuwTAi7JfCnz9jRkRc8VNTpszZ5pKP06XdHctsWXOckg/VRzoNRFJUdk4rff0rBeVqgpYniIP+r5zaSP5Q1FP5px7h5grLsPuFVJl/vvFSFDWqo33ccDHiIAmxY5tQOUuc+pMW/RJU8tpjboX8O3V6x4DBAPKreF3AT3pH/9VwFKzl8Zy9TtSOlYOnmu5ScnyK4zn0/8bzTYyIgitU/W0QL6sfrcnT5xddT0lnphojmJOz2VSO0TjhrgdIPbir7XLaOo5GYR4n9w4zKkXAiYW3rX4KhSCALGWR5pYAirbPS8MJaOUCI2BNkijiyS3Q2/800HgG08QZJ/yyYLjoIT4ppadLHF0H12U=
