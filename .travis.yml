@@ -7,6 +7,8 @@ cache:
   - node_modules
 notifications:
   email: false
+before_script:
+  npm install --global grunt
 after_script:
 - "./scripts/bower-deploy.sh"
 before_deploy:
