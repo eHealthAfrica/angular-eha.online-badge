@@ -5,7 +5,7 @@
   "main": "dist/online-badge.template.js",
   "scripts": {
     "test": "grunt test",
-    "prepublish": "semantic-release pre",
+    "prepublish": "grunt build && semantic-release pre",
     "postpublish": "semantic-release post"
   },
   "repository": {
