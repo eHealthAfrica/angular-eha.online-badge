@@ -18,6 +18,7 @@
         };
         function addListener(state, online) {
           function setOnline() {
+            console.log('asd');
             $timeout(function() {
               scope.online = online;
             });
