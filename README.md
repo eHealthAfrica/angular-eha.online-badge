@@ -1,6 +1,11 @@
 # angular-eha.online-badge
 
-[![Build Status](https://travis-ci.org/eHealthAfrica/online-badge.svg)](https://travis-ci.org/eHealthAfrica/online-badge) ![Dependecy Status](https://david-dm.org/eHealthAfrica/online-badge.svg) ![Dev Dependecy Status](https://david-dm.org/eHealthAfrica/online-badge/dev-status.svg)
+[![Build Status][travis-image]][travis-url]
+
+> An online/offline indicator badge
+
+[travis-image]: https://img.shields.io/travis/eHealthAfrica/angular-eha.online-badge.svg
+[travis-url]: https://travis-ci.org/eHealthAfrica/angular-eha.online-badge
 
 ## Usage
 
