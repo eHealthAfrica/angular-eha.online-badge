@@ -1,1 +1,0 @@
-../dist/online-badge.template.js
